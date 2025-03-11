@@ -1,5 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
-
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Category } from './category.entity';
 @Entity('products')
 export default class Product {
   @PrimaryGeneratedColumn()
@@ -11,9 +11,8 @@ export default class Product {
   @Column()
   description: string;
 
-  @Column()
-  image: string;
-
-  @Column()
-  price: string;
+  @Column({type : 'float'})
+  price: number;
+  @ManyToOne(() => Category, (category) => category.products, { onDelete: 'CASCADE' })
+  category: Category;
 }

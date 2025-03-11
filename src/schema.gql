@@ -3,11 +3,11 @@
 # ------------------------------------------------------
 
 type ProductModel {
-  id: Int!
+  id: ID!
   name: String!
+  price: Float!
   description: String!
-  image: String!
-  price: String!
+  categoryId: ID!
 }
 
 type Query {
@@ -16,6 +16,6 @@ type Query {
 }
 
 type Mutation {
-  createProduct(name: String!, description: String!, image: String!, price: String!): ProductModel!
+  createProduct(name: String!, description: String!, price: Float!, categoryId: Float!): ProductModel!
   deleteProduct(id: Float!): ProductModel!
 }

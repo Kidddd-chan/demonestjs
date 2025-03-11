@@ -7,7 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProductsController } from './products/products.controller';
 import { ProductsModule } from './products/products.module';
 import Product from './products/product.entity';
-import { Categoty } from './products/category.entity';
+import { Category } from './products/category.entity';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
@@ -18,11 +18,11 @@ import { join } from 'path';
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
-      port: 3306,
+      port: 3308,
       username: 'root',
-      password: 'password',
-      database: 'demonestIT22D',
-      entities: [Product, Categoty],
+      password: '12070123a',
+      database: 'demonestst22D',
+      entities: [Product, Category],
       synchronize: true,
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({

@@ -19,18 +19,17 @@ export class ProductsResolver {
   async createProduct(
     @Args('name') name: string,
     @Args('description') description: string,
-    @Args('image') image: string,
-    @Args('price') price: string,
+    @Args('price') price: number,
+    @Args('categoryId') categoryID: number,  
   ) {
     const params = {
       name,
       description,
-      image,
       price,
+      categoryID,
     };
     return this.productService.create(params);
   }
-
   @Mutation(() => ProductModel)
   async deleteProduct(@Args('id') id: number) {
     return this.productService.delete(id);

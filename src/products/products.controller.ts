@@ -4,8 +4,8 @@ import { ProductsService } from './products.service';
 export interface ProductParams {
   name: string;
   description: string;
-  image: string;
-  price: string;
+  price: number;
+  categoryID: number;
 }
 
 @Controller('products')
